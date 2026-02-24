@@ -1,0 +1,356 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f7;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.header-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.text-btn {
+    background: none;
+    color: #3498db;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.text-btn:hover {
+    background-color: #f0f8ff;
+    text-decoration: underline;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+#quiz-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.demo-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: -8px 0 16px;
+    color: #666;
+    font-size: 14px;
+}
+
+.demo-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #f0f8ff;
+    color: #2980b9;
+}
+
+.demo-modal-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 10px 0 10px;
+    flex-wrap: wrap;
+}
+
+.demo-list {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+    max-height: 260px;
+    overflow: auto;
+    padding: 10px 0;
+}
+
+.demo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 0;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.demo-item input {
+    width: 16px;
+    height: 16px;
+}
+
+.demo-char {
+    font-size: 18px;
+    line-height: 1;
+    color: #333;
+    font-family: 'KaiTi', '楷体', serif;
+}
+
+#question-area {
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pinyin-text {
+    font-size: 32px;
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.meaning-text {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0 0 0;
+}
+
+.word-hint-text {
+    font-size: 15px;
+    color: #2980b9;
+    margin: 8px 0 0 0;
+    font-style: italic;
+    min-height: 20px;
+}
+
+.icon-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    padding: 5px;
+}
+
+.icon-btn:hover {
+    opacity: 1;
+}
+
+#drawing-area {
+    margin: 0 auto 20px;
+    width: 300px;
+    height: 300px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    /* 米字格背景 */
+    background-image: 
+        linear-gradient(0deg, transparent 149px, #eee 149px, #eee 151px, transparent 151px),
+        linear-gradient(90deg, transparent 149px, #eee 149px, #eee 151px, transparent 151px),
+        linear-gradient(45deg, transparent 49.5%, #eee 49.5%, #eee 50.5%, transparent 50.5%),
+        linear-gradient(-45deg, transparent 49.5%, #eee 49.5%, #eee 50.5%, transparent 50.5%);
+    background-size: 300px 300px;
+    position: relative;
+    cursor: crosshair;
+}
+
+#character-target-div {
+    width: 100%;
+    height: 100%;
+}
+
+.feedback {
+    min-height: 24px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+}
+
+.feedback.correct {
+    color: #2ecc71;
+}
+
+.feedback.wrong {
+    color: #e74c3c;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.primary-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #2980b9;
+}
+
+.secondary-btn {
+    background-color: #ecf0f1;
+    color: #333;
+}
+
+.secondary-btn:hover {
+    background-color: #bdc3c7;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#import-text {
+    width: 100%;
+    height: 150px;
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Mode Select */
+.mode-select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    margin-right: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Pinyin Mode Styles */
+.character-text {
+    font-size: 80px;
+    color: #333;
+    font-weight: bold;
+    margin: 10px 0;
+    line-height: 1.2;
+    font-family: 'KaiTi', '楷体', serif; /* Use a nice Chinese font */
+}
+
+#pinyin-input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+}
+
+#pinyin-input {
+    width: 80%;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    outline: none;
+}
+
+#pinyin-input:focus {
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+#check-pinyin-btn {
+    width: 50%;
+}
